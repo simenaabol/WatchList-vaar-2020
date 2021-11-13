@@ -1,0 +1,14 @@
+image: gradle:jdk11
+
+cache:
+  paths:
+    - .gradle/wrapper
+    - .gradle/caches
+
+package:
+  stage: test
+  before_script:
+    - cd App
+  script:
+    - gradle build
+    - gradle test
